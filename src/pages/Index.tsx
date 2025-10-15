@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const features = [
     {
       icon: "Zap",
@@ -102,7 +104,7 @@ const Index = () => {
               Примеры
             </a>
           </nav>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button className="bg-primary hover:bg-primary/90" onClick={() => navigate('/dashboard')}>
             Войти
             <Icon name="ArrowRight" className="ml-2" size={16} />
           </Button>
@@ -123,7 +125,7 @@ const Index = () => {
               Без программирования, с полной аналитикой и интеграциями.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8" onClick={() => navigate('/dashboard')}>
                 Создать квиз
                 <Icon name="Sparkles" className="ml-2" size={20} />
               </Button>
@@ -271,7 +273,7 @@ const Index = () => {
             <p className="text-muted-foreground text-lg mb-8">
               Создайте свой первый квиз бесплатно прямо сейчас
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8" onClick={() => navigate('/dashboard')}>
               Создать квиз
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
